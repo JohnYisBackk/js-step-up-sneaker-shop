@@ -6,7 +6,7 @@ Step Up PRO is a frontend portfolio project featuring a dynamic sneaker collecti
 
 ## 🌐 Live Demo
 
-🚀 **[View Live Demo]()**
+🚀 **[View Live Demo](https://johnyisbackk.github.io/js-step-up-sneaker-shop/)**
 
 ## 📸 Preview
 
