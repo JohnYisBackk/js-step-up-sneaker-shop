@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Step Up PRO - Discover premium sneakers, explore collections, and find your perfect pair."
+    />
+
+    <!-- ========================================== -->
+    <!-- GOOGLE FONTS -->
+    <!-- ========================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ========================================== -->
+    <!-- LUCIDE ICONS -->
+    <!-- ========================================== -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="script.js" defer></script>
+    <title>Step Up | Premium Sneakers</title>
+  </head>
+  <body>
+    <!-- ========================================== -->
+    <!-- APP WRAPPER -->
+    <!-- ========================================== -->
+
+    <div class="app-wrapper">
+      <!-- ========================================== -->
+      <!-- HEADER -->
+      <!-- ========================================== -->
+
+      <header class="header">
+        <a href="#" class="logo">
+          <img src="assets/logo.png" alt="logo image" />
+        </a>
+
+        <nav class="nav">
+          <a href="#" class="nav-link active">Home</a>
+          <a href="#" class="nav-link">Collection</a>
+          <a href="#" class="nav-link">Favorites</a>
+          <a href="#" class="nav-link">About</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="header-action-btn"
+            id="searchBtn"
+            aria-label="Search"
+          >
+            <i data-lucide="search"></i>
+          </button>
+
+          <input
+            type="search"
+            class="header-search-input"
+            id="searchInput"
+            placeholder="Search sneakers..."
+            aria-label="Search sneakers"
+          />
+
+          <button
+            type="button"
+            class="header-action-btn"
+            id="favoritesBtn"
+            aria-label="Favorites"
+          >
+            <i data-lucide="heart"></i>
+          </button>
+
+          <button
+            type="button"
+            class="header-action-btn cart-btn"
+            id="cartBtn"
+            aria-label="Shopping cart"
+          >
+            <i data-lucide="shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+
+          <button
+            type="button"
+            class="header-action-btn"
+            id="profileBtn"
+            aria-label="Profile"
+          >
+            <i data-lucide="user-round"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- ========================================== -->
+      <!-- MAIN CONTENT -->
+      <!-- ========================================== -->
+
+      <main class="main-content">
+        <!-- ========================================== -->
+        <!-- HERO SECTION -->
+        <!-- ========================================== -->
+
+        <section class="hero-section" id="home">
+          <div class="hero-info">
+            <h1>Discover Premium <span>Sneakers</span></h1>
+            <p>
+              A curated collection of the latest and most iconic sneakers.
+              Style, performance, and exclusivity - all in one place.
+            </p>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#collection" class="explore-btn">
+              <span>Explore Collection</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+
+            <button type="button" class="hero-favorites-btn">
+              <i data-lucide="heart"></i>
+              <span>My Favorites</span>
+            </button>
+          </div>
+
+          <div class="hero-features">
+            <div class="hero-feature">
+              <i data-lucide="truck"></i>
+              <span>Fast Delivery</span>
+            </div>
+
+            <div class="hero-feature">
+              <i data-lucide="shield-check"></i>
+              <span>Authentic Collection</span>
+            </div>
+
+            <div class="hero-feature">
+              <i data-lucide="refresh-cw"></i>
+              <span>Easy Returns</span>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img
+              src="assets/main-shoe.png"
+              id="heroSneakerImage"
+              alt="Nike Air Jordan 1 Purple"
+            />
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BROWSE SNEAKERS -->
+        <!-- ========================================== -->
+
+        <section class="browse-section" id="collection">
+          <!-- ========================================== -->
+          <!-- BROWSE HEADER -->
+          <!-- ========================================== -->
+
+          <div class="browse-header">
+            <div class="browse-title">
+              <h2>Browse Sneakers</h2>
+              <p>Find your next favorite pair from our premium collection.</p>
+            </div>
+
+            <div class="browse-tabs">
+              <button
+                type="button"
+                class="browse-tab active"
+                data-category="all"
+              >
+                All Sneakers
+              </button>
+
+              <button type="button" class="browse-tab" data-category="new">
+                New Arrivals
+              </button>
+
+              <button type="button" class="browse-tab" data-category="best">
+                Best Sellers
+              </button>
+
+              <button type="button" class="browse-tab" data-category="trending">
+                Trending
+              </button>
+            </div>
+          </div>
+
+          <!-- ========================================== -->
+          <!-- COLLECTION LAYOUT -->
+          <!-- ========================================== -->
+
+          <div class="collection-layout">
+            <!-- ========================================== -->
+            <!-- FILTERS SIDEBAR -->
+            <!-- ========================================== -->
+
+            <aside class="filters-sidebar">
+              <!-- FILTERS HEADER -->
+
+              <div class="filters-header">
+                <div class="filters-title">
+                  <i data-lucide="list-filter"></i>
+                  <h3>Filters</h3>
+                </div>
+
+                <button
+                  type="button"
+                  class="clear-filters-btn"
+                  id="clearFiltersBtn"
+                >
+                  Clear All
+                </button>
+              </div>
+
+              <fieldset class="filter-group brand-filter">
+                <legend>Brand</legend>
+
+                <div class="brand-options">
+                  <label class="filter-option">
+                    <input type="radio" name="brand" value="all" checked />
+                    <span>All Brands</span>
+                  </label>
+
+                  <label class="filter-option">
+                    <input type="radio" name="brand" value="Nike" />
+                    <span>Nike</span>
+                  </label>
+
+                  <label class="filter-option">
+                    <input type="radio" name="brand" value="Adidas" />
+                    <span>Adidas</span>
+                  </label>
+
+                  <label class="filter-option">
+                    <input type="radio" name="brand" value="New Balance" />
+                    <span>New Balance</span>
+                  </label>
+
+                  <label class="filter-option">
+                    <input type="radio" name="brand" value="Puma" />
+                    <span>Puma</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="filter-group color-filter">
+                <legend>Color</legend>
+
+                <div class="color-options">
+                  <label class="color-option">
+                    <input type="radio" name="color" value="all" checked />
+                    <span class="color-circle color-all"></span>
+                    <span class="sr-only">All Colors</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="radio" name="color" value="black" />
+                    <span class="color-circle color-black"></span>
+                    <span class="sr-only">Black</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="radio" name="color" value="white" />
+                    <span class="color-circle color-white"></span>
+                    <span class="sr-only">White</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="radio" name="color" value="red" />
+                    <span class="color-circle color-red"></span>
+                    <span class="sr-only">Red</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="radio" name="color" value="blue" />
+                    <span class="color-circle color-blue"></span>
+                    <span class="sr-only">Blue</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="radio" name="color" value="green" />
+                    <span class="color-circle color-green"></span>
+                    <span class="sr-only">Green</span>
+                  </label>
+
+                  <label class="color-option">
+                    <input type="radio" name="color" value="purple" />
+                    <span class="color-circle color-purple"></span>
+                    <span class="sr-only">Purple</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="filter-group price-filter">
+                <div class="filter-group-title">
+                  <h4>Price</h4>
+                </div>
+
+                <div class="price-slider">
+                  <input
+                    type="range"
+                    id="priceRange"
+                    min="50"
+                    max="300"
+                    step="10"
+                    value="300"
+                  />
+
+                  <div class="price-values">
+                    <span>€50</span>
+                    <span id="maxPriceValue">€300</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            <!-- ========================================== -->
+            <!-- PRODUCTS CONTENT -->
+            <!-- ========================================== -->
+
+            <div class="products-content">
+              <!-- ========================================== -->
+              <!-- PRODUCTS TOOLBAR -->
+              <!-- ========================================== -->
+
+              <div class="products-toolbar">
+                <!-- RESULTS COUNT -->
+
+                <div class="products-results">
+                  <span id="resultsCount"> Showing 0 sneakers </span>
+                </div>
+
+                <!-- TOOLBAR ACTIONS -->
+
+                <div class="toolbar-actions">
+                  <!-- FAVORITES ONLY -->
+
+                  <label class="favorites-toggle">
+                    <i data-lucide="heart"></i>
+
+                    <span>Favorites Only</span>
+
+                    <input type="checkbox" id="favoritesOnlyInput" />
+
+                    <span class="toggle-switch"></span>
+                  </label>
+
+                  <!-- SORT BY -->
+
+                  <div class="sort-box">
+                    <label for="sortSelect">Sort by:</label>
+
+                    <select id="sortSelect">
+                      <option value="default">Default</option>
+                      <option value="price-low">Price: Low to High</option>
+                      <option value="price-high">Price: High to Low</option>
+                      <option value="name-az">Name: A-Z</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ========================================== -->
+              <!-- SNEAKERS GRID -->
+              <!-- ========================================== -->
+
+              <div class="sneakers-grid" id="sneakersGrid">
+                <!-- SNEAKER CARDS RENDERED IN JS -->
+              </div>
+
+              <!-- ========================================== -->
+              <!-- PAGINATION -->
+              <!-- ========================================== -->
+
+              <div class="pagination">
+                <button
+                  type="button"
+                  class="pagination-btn"
+                  id="prevPageBtn"
+                  aria-label="Previous page"
+                >
+                  <i data-lucide="chevron-left"></i>
+                </button>
+
+                <div class="pagination-pages" id="paginationPages">
+                  <!-- PAGE BUTTONS RENDERED IN JS -->
+                </div>
+
+                <button
+                  type="button"
+                  class="pagination-btn"
+                  id="nextPageBtn"
+                  aria-label="Next page"
+                >
+                  <i data-lucide="chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- ========================================== -->
+    <!-- SHOPPING CART MODAL -->
+    <!-- ========================================== -->
+
+    <!-- SHOPPING CART OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- SHOPPING CART PANEL -->
+    <aside class="cart-panel" id="cartPanel">
+      <div class="cart-header">
+        <h2>Shopping Cart</h2>
+
+        <button
+          type="button"
+          class="cart-close-btn"
+          id="closeCartBtn"
+          aria-label="Close cart"
+        >
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">$0.00</strong>
+        </div>
+
+        <button type="button" class="cart-clear-btn" id="clearCartBtn">
+          Clear Cart
+        </button>
+      </div>
+    </aside>
+  </body>
+</html>
